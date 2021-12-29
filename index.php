@@ -43,7 +43,7 @@
             margin-left: 200px;
             padding: 1px 16px;
             height: 1000px;
-            margin-top: 55px;
+            margin-top: 58px;
         }
 
         .navbar {
@@ -90,11 +90,11 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Admin Dashboard</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -109,13 +109,13 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
         <!-- The sidebar -->
         <div class="sidebar">
             <a class="active" href="#home">Jobs</a>
-            <a href="#news">News</a>
+            <a href="#news">Candidates Applied</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </div>
@@ -143,7 +143,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="Job Description" class="form-label">Job Description</label>
-                            <input type="text" class="form-control" id="Job Description">
+                            <input type="text" style="height:150px;" class="form-control" id="Job Description">
                         </div>
                         <div class="mb-3">
                             <label for="CTC" class="form-label">CTC</label>
