@@ -84,4 +84,3 @@ if(isset($_POST['submitapply'])){
     }
 }
 //mysqli_close($conn);
-?>

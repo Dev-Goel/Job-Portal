@@ -49,7 +49,7 @@
             </tr>
         </thead>
         <?php $sql = "SELECT `cname`, `position`, `CTC` FROM `jobs`";
-        
+
         $result = mysqli_query($conn, $sql);
         $i = 0;
         if ($result->num_rows > 0) {
