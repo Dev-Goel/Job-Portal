@@ -62,5 +62,26 @@ if(isset($_POST['job'])){
         echo "ERROR: Failed to Post the Job $sql. " .mysqli_error($conn);
     }
 }
+
+if(isset($_POST['submitapply'])){
+    $name=$_POST['name'];
+    $apply=$_POST['apply'];
+    $qual=$_POST['qual'];   
+    $year=$_POST['year'];
+
+    $sql = "INSERT INTO `candidates`(`name`, `apply`, `qual`, `year`) VALUES ('$name','$apply','$qual','$year')";
+
+    // for debugging my code
+    // var_dump($sql);
+    // die();
+
+    if(mysqli_query($conn,$sql)){
+        echo "Applied for job successfully!!";
+    }
+    else
+    {
+        echo "ERROR: Failed to apply for the job $sql. " .mysqli_error($conn);
+    }
+}
 //mysqli_close($conn);
 ?>
