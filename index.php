@@ -1,4 +1,6 @@
+<?php include 'config.php'; ?>
 <?php include 'header.php' ?>
+
 
 <!-- Page content -->
 <div class="content">
@@ -12,24 +14,28 @@
     </p>
     <div class="collapse" id="collapseExample">
         <div class="card card-body">
-            <form>
+            <form method="POST">
                 <div class="mb-3">
                     <label for="Company Name" class="form-label">Company Name</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" name="cname">
                 </div>
                 <div class="mb-3">
                     <label for="Designation" class="form-label">Designation</label>
-                    <input type="text" class="form-control" id="Designation">
+                    <input type="text" class="form-control" id="Designation" name="pos">
                 </div>
                 <div class="mb-3">
                     <label for="Job Description" class="form-label">Job Description</label>
-                    <input type="text" style="height:150px;" class="form-control" id="Job Description">
+                    <input type="text" style="height:150px;" class="form-control" id="Job Description" name="Jdesc">
+                </div>
+                <div class="mb-3">
+                    <label for="Skills" class="form-label">Skills Required</label>
+                    <input type="text" class="form-control" id="skills" name="skills">
                 </div>
                 <div class="mb-3">
                     <label for="CTC" class="form-label">CTC</label>
-                    <input type="text" class="form-control" id="CTC">
+                    <input type="text" class="form-control" id="CTC" name="CTC">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="job">Submit</button>
             </form>
         </div>
     </div>
@@ -42,8 +48,27 @@
                 <th scope="col">CTC</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <?php $sql = "SELECT `cname`, `position`, `CTC` FROM `jobs`";
+        
+        $result = mysqli_query($conn, $sql);
+        $i = 0;
+        if ($result->num_rows > 0) {
+            while ($rows = $result->fetch_assoc()) {
+                echo "
+                    <tbody>
+                    <tr>
+                        <td>" . ++$i . "</td>
+                        <td>" . $rows['cname'] . "</td>
+                        <td>" . $rows['position'] . "</td>
+                        <td>" . $rows['CTC'] . "</td>
+                    </tr>";
+            }
+        } else {
+            echo "";
+        }
+        ?>
+        </tbody>
+        <!-- <tr>
                 <th scope="row">1</th>
                 <td>TCS</td>
                 <td>Software Engineer</td>
@@ -60,8 +85,8 @@
                 <td>ICICI Bank</td>
                 <td>Management Trainee</td>
                 <td>16LPA</td>
-            </tr>
-        </tbody>
+            </tr> -->
+
     </table>
 </div>
 </div>

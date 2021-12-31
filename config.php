@@ -45,5 +45,22 @@ if(isset($_POST['Login'])){
         $error='emailid or password is incorrect';
     }
 }
-mysqli_close($conn);
+
+if(isset($_POST['job'])){
+    $cname=$_POST['cname'];
+    $pos=$_POST['pos'];
+    $Jdesc=$_POST['Jdesc'];
+    $skills=$_POST['skills'];
+    $CTC=$_POST['CTC'];
+
+    $sql = "INSERT INTO `jobs`(`cname`, `position`, `Jdesc`, `skills`, `CTC`) VALUES ('$cname','$pos','$Jdesc','$skills','$CTC')";
+    if(mysqli_query($conn,$sql)){
+        echo "New Job Posted Successfully!!";
+    }
+    else
+    {
+        echo "ERROR: Failed to Post the Job $sql. " .mysqli_error($conn);
+    }
+}
+//mysqli_close($conn);
 ?>
