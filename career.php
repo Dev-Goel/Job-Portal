@@ -30,8 +30,8 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo '
-                <div class="col-md-4">
-                    <div class="jobs">
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="jobs" style="background-color: lightgrey; width: 350px; border: 10px solid green;padding: 20px; margin: 20px; border-radius: 25px;">
                         <h3 style="text-align: center;">' . $row['position'] . '</h3>
                         <h4 style="text-align: center;">' . $row['cname'] . '</h4>
                         <p style="color: black; text-align:justify;">' . $row['Jdesc'] . '</p>
