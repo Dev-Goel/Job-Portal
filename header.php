@@ -34,7 +34,7 @@
 
         /* Links on mouse-over */
         .sidebar a:hover:not(.active) {
-            background-color: #555;
+            background-color: lightblue;
             color: white;
         }
 
@@ -90,7 +90,7 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Admin Dashboard</a>
+                <a class="navbar-brand" href="index.php">Admin Dashboard</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -114,8 +114,8 @@
         </nav>
         <!-- The sidebar -->
         <div class="sidebar">
-            <a class="active" href="#home">Jobs</a>
+            <a href="index.php">Jobs</a>
             <a href="jobs.php">Candidates Applied</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="contact.php">Contact</a>
+            <a href="about.php">About</a>
         </div>
